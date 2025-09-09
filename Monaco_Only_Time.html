@@ -16,14 +16,14 @@
     }
 
     .time {
-      font-size: 32px;  /* bigger digits */
+      font-size: 16px;  /* bigger digits */
       font-weight: 500;
       color: #fff;      /* white text */
     }
   </style>
 </head>
 <body>
-  <span class="time" id="monaco-time">--:--:--</span>
+  <span class="time" id="monaco-time">--:--</span>
 
   <script>
     function updateMonacoTime() {
@@ -31,7 +31,6 @@
         timeZone: "Europe/Monaco",
         hour: "numeric",
         minute: "numeric",
-        second: "numeric",
         hour12: true
       };
       const formatter = new Intl.DateTimeFormat([], options);
