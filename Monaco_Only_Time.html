@@ -15,30 +15,15 @@
       height: 100vh; /* full height */
     }
 
-    .time-container {
-      text-align: center;
-    }
-
-    .label {
-      display: block;
-      font-size: 22px;  /* bigger Monaco Time text */
-      font-weight: 700;
-      color: #fff;      /* black text (change if needed) */
-      margin-bottom: 6px;
-    }
-
     .time {
-      font-size: 20px;  /* slightly smaller time */
-      font-weight: 600;
-      color: #fff;
+      font-size: 32px;  /* bigger digits */
+      font-weight: 500;
+      color: #fff;      /* white text */
     }
   </style>
 </head>
 <body>
-  <div class="time-container">
-    <span class="label">Monaco Time</span>
-    <span class="time" id="monaco-time">--:--:--</span>
-  </div>
+  <span class="time" id="monaco-time">--:--:--</span>
 
   <script>
     function updateMonacoTime() {
@@ -58,5 +43,3 @@
   </script>
 </body>
 </html>
-
-
