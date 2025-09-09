@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monaco Time</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent; /* transparent background */
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* full height */
+    }
+
+    .time-container {
+      text-align: center;
+    }
+
+    .label {
+      display: block;
+      font-size: 22px;  /* bigger Monaco Time text */
+      font-weight: 700;
+      color: #000;      /* black text (change if needed) */
+      margin-bottom: 6px;
+    }
+
+    .time {
+      font-size: 20px;  /* slightly smaller time */
+      font-weight: 600;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="time-container">
+    <span class="label">Monaco Time</span>
+    <span class="time" id="monaco-time">--:--:--</span>
+  </div>
+
+  <script>
+    function updateMonacoTime() {
+      const options = {
+        timeZone: "Europe/Monaco",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+      };
+      const formatter = new Intl.DateTimeFormat([], options);
+      document.getElementById("monaco-time").textContent = formatter.format(new Date());
+    }
+
+    setInterval(updateMonacoTime, 1000);
+    updateMonacoTime();
+  </script>
+</body>
+</html>
